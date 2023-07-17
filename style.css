@@ -32,3 +32,101 @@ footer{
     background-color: blue;
     grid-area: footer;
 }
+
+/*------------------------*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    
+}
+
+main .modes{
+    background-color: white;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+main .content-main{
+    background-color: aqua;
+    width: 80%;
+    height: 80%;
+}
+
+/*------------------------*/
+
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+}
+
+aside .navbar{
+    background-color: magenta;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 7.5%;
+    width: 70%;
+}
+
+.navbar a{
+    background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 15%;
+}
+
+aside .menu{
+    background-color: magenta;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 60%;
+    width: 70%;
+}
+
+.menu a{
+    background-color: aqua;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    height: 15%;
+}
+
+/*------------------------*/
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer #last_update{
+    background-color: yellow;
+}
