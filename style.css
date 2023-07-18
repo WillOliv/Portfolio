@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+:root{
+    --white: #F5F5F5;
+    --black: #333333;
+}
+
+/*------------------------------------------------  GRID */
 body{
     background-color: black;
     display: grid;
@@ -18,22 +24,40 @@ body{
     ;
 }
 
-aside{
-    background-color: green;
-    grid-area: aside;
-}
-
 main{
-    background-color: red;
     grid-area: main;
 }
 
+aside{
+    grid-area: aside;
+}
+
 footer{
-    background-color: blue;
     grid-area: footer;
 }
 
-/*------------------------*/
+/*------------------------------------------------  Layout sketch */
+
+main, aside, footer, .modes, .menu, .navbar, .content-main, a, #last_update{    
+    margin: 1px;
+    padding: 1%;
+    border: solid white 1px;
+}
+
+/*------------------------------------------------  General atributes */
+
+body, a, button{
+
+    color: var(--white);
+    text-decoration: none;
+}
+
+main, aside, footer{
+    background-color: var(--black);
+}
+
+
+/*------------------------------------------------  Main */
 
 main{
     display: flex;
@@ -42,25 +66,20 @@ main{
     justify-content: center;
 
     position: relative;
-    
 }
 
 main .modes{
-    background-color: white;
-
     position: absolute;
     top: 0;
     left: 0;
-
 }
 
 main .content-main{
-    background-color: aqua;
     width: 80%;
     height: 80%;
 }
 
-/*------------------------*/
+/*------------------------------------------------  Aside */
 
 aside{
     display: flex;
@@ -71,8 +90,6 @@ aside{
 }
 
 aside .navbar{
-    background-color: magenta;
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -87,7 +104,6 @@ aside .navbar{
 }
 
 .navbar a{
-    background-color: aqua;
 
     display: flex;
     align-items: center;
@@ -97,8 +113,6 @@ aside .navbar{
 }
 
 aside .menu{
-    background-color: magenta;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,7 +122,6 @@ aside .menu{
 }
 
 .menu a{
-    background-color: aqua;
 
     display: flex;
     align-items: center;
@@ -118,7 +131,7 @@ aside .menu{
     height: 15%;
 }
 
-/*------------------------*/
+/*------------------------------------------------  Footer */
 
 footer{
     display: flex;
@@ -128,5 +141,5 @@ footer{
 }
 
 footer #last_update{
-    background-color: yellow;
+
 }
