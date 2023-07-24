@@ -13,49 +13,13 @@
     font-size: 62.5%;
 }
 
-/*  #7B5599  Purple light
-    #563D7C  Purple medium
-    #3B2151  Purple dark
-*/
-/*------------------------------------------------  GRID */
-
-body{
-    background-color: var(--black);
-    display: grid;
-    grid-template-columns: 20fr    70fr  30fr    20fr ;
-    grid-template-rows:    20fr    90fr  10fr    20fr ;
-    grid-template-areas: 
-        " .     .         .            . "
-        " .     main      aside        . "
-        " .     footer    footer       . "
-        " .     .         .            . "
-    ;
-
-    position: relative;
-}
-
-main{
-    grid-area: main;
-}
-
-aside{
-    grid-area: aside;
-}
-
-footer{
-    grid-area: footer;
-}
-
-/*------------------------------------------------  Layout sketch */
-
-/*
-main, aside, footer, .modes, .navbar, .content_container, a,button, #last_update{    
-    padding: 1%;
-    border: solid white 1px;
-}
-
-*/
 /*------------------------------------------------  General atributes */
+body{
+    display: flex;
+    background-color: var(--black);
+    align-items: center;
+    justify-content: center;
+}
 
 body, a, button{
     color: var(--white);
@@ -63,38 +27,75 @@ body, a, button{
     font-size: 1.5rem;
 }
 
-main, aside, footer{
-    background-color: var(--black);
+/*------------------------------------------------  GRID */
+.grid{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    
+    display: grid;
+
+    grid-template-columns:      35fr 15fr ;
+    grid-template-rows:     05fr
+                            40fr
+                            05fr 
+                              
+                         
+;
+
+    grid-template-areas: 
+        "   header    header  "
+        "   main      aside   "
+        "   footer    footer  "
+    ;
 }
 
+.grid header{
+    grid-area: header;
+}
 
-/*------------------------------------------------  Main */
+.grid main{
+    grid-area: main;
+}
 
-main{
+.grid aside{
+    grid-area: aside;
+}
+
+.grid footer{
+    grid-area: footer;
+}
+
+/*------------------------------------------------  Layout sketch */
+/*
+header, main, aside, footer, .modes, .navbar, .content_container, a,button, #last_update{   
+    border: solid white 1px;
+}
+
+*/
+
+/*------------------------------------------------  Header */
+header{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modes{
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    position: relative;
-}
-
-main .modes{
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
     width: 5%;
-    height: 7.5%;
-
-    margin: 1%;
+    height: 95%;
 }
 
-.modes button{
+.modes .mode_button{
     background: none;
-    width: 100%;
-    height: 100%;
+    
+    width: 90%;
+    height: 90%;
 
     cursor: pointer;
 }
@@ -105,7 +106,34 @@ main .modes{
     justify-content: center;
     
     width: 100%;
-    height:100%;
+    height: 100%;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 25%;
+    height: 95%;
+}
+
+.navbar a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20%;
+    height: 80%;
+}
+
+/*------------------------------------------------  Main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 main .content_main{
@@ -113,11 +141,10 @@ main .content_main{
     align-items: center;
     justify-content: center;
 
-    width: 85%;
-    height: 85%;
+    width: 95%;
+    height: 95%;
 
     position: relative;
-    padding: 2%;
 }
 
 main .content_container{
@@ -126,40 +153,10 @@ main .content_container{
 }
 
 /*------------------------------------------------  Aside */
-
 aside{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    position: relative;
-}
-
-aside .navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    height: 7.5%;
-    width: 70%;
-
-    margin: 1%;
-    
-}
-
-.navbar a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 15%;
-    height: 100%;
-    
 }
 
 aside .menu{
@@ -168,13 +165,13 @@ aside .menu{
     justify-content: center;
     align-items: center;
     
-    height: 60%;
+    height: 70%;
     width: 70%;
 
     position: relative;
 
+    margin-left: 10%;
 }
-
 
 .menu .button_container{
     display: flex;
@@ -184,21 +181,29 @@ aside .menu{
 
     height: 90%;
     width: 90%;
+
+    margin-left: 5%;
 }
 
-.menu button{
+.menu .menu_button{
     background: none;
-    font-size: 1.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    font-size: 2rem;
+
     width: 100%;
     height: 15%;
 
     cursor: pointer;
 }
+
 /*------------------------------------------------  Footer */
 
 footer{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
 
@@ -209,46 +214,65 @@ footer #last_update{
 
 }
 
-.footer_border_2{
-    border-top: 5px solid #563D7C ;
+/*------------------------------------------------  Borders */
+.main_border_1{
     position: absolute;
-
     width: 50%;
-    height: 20%;
+    height: 50%;
 
     top: 0;
+    left: 0;
+
+    border-top: 5px solid var(--purple);
+    border-left: 5px solid var(--purple);
+    border-radius: 2rem 0 0 0;
 }
 
-/*------------------------------------------------  Borders */
-
-.main_border, .content_border, .menu_border, .footer_border{
+.main_border_2{
     position: absolute;
+    width: 50%;
+    height: 50%;
+
+    bottom: 0;
+    right: 0;
+
+    border-bottom: 5px solid var(--purple);
+    border-right: 5px solid var(--purple);
+    border-radius: 0 0 2rem 0;
+}
+
+.content_border{
+    position: absolute;
+    top: 0;
+    right: 0;
 
     width: 50%;
     height: 50%;
+
+    border-right: solid var(--purple) 5px ;
+    border-top:   solid var(--purple) 5px;
+
 }
 
-
-.main_border, .content_border{
-    border-top: 5px solid #563D7C ;
-    top: 0;
-}
-
-.menu_border, .footer_border{
-    border-bottom: solid #563D7C 5px;
+.menu_border{
+    position: absolute;
     bottom: 0;
-}
-
-.main_border, .menu_border{
-    border-left: 5px solid #563D7C;
     left: 0;
+
+    width: 50%;
+    height: 50%;
+
+    border-bottom: solid var(--purple) 5px;
+    border-left: solid var(--purple) 5px;
+    border-radius: 0 0 0 2rem ;
 }
 
-.content_border, .footer_border{
-    border-right: solid #563D7C  5px;
-    right: 0;
+.footer_border{
+    position: absolute;
+    top: 0;
+
+    width: 50%;
+
+    border-top:   solid var(--purple) 5px;
+
 }
-
-/*
-
-*/
