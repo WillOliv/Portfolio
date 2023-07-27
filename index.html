@@ -3,55 +3,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/pages/page-style.css">
 </head>
 <body>
 
     <div class="grid">
 
         <header>
-            <div class="modes">
-                <button class="mode_button">
-                    <i class="fa-solid fa-circle-half-stroke fa-lg"></i>
-                </button>
+            <div class="header_container">
+                <div class="modes">
+                    <button class="mode_button">
+                        <i class="fa-solid fa-circle-half-stroke fa-xl"></i>
+                    </button>
+                </div>
+    
+                <nav class="navbar">
+                    <a target="_blank" href="https://github.com/WillOliv" >
+                        <i class="fa-brands fa-github fa-xl"></i></a>
+    
+                    <a target="_blank" href="https://www.linkedin.com/in/willams-oliveira-3518bb185/">
+                        <i class="fa-brands fa-linkedin-in fa-xl"></i></a>
+    
+                    <a target="_blank" href="mailto:willamsdom1@gmail.com">
+                        <i class="fa-regular fa-envelope fa-xl"></i></a>
+                    
+                    <a target="_blank" href="https://wa.me/5581986550955">
+                        <i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                </nav>
             </div>
-
-            <nav class="navbar">
-                <a target="_blank" href="https://github.com/WillOliv" >
-                    <i class="fa-brands fa-github fa-xl"></i></a>
-
-                <a target="_blank" href="https://www.linkedin.com/in/willams-oliveira-3518bb185/">
-                    <i class="fa-brands fa-linkedin-in fa-lg"></i></a>
-
-                <a target="_blank" href="mailto:willamsdom1@gmail.com">
-                    <i class="fa-brands fa-google fa-lg"></i></a>
-                
-                <a target="_blank" href="https://wa.me/5581986550955">
-                    <i class="fa-brands fa-whatsapp fa-xl"></i></a>
-            </nav>
+            <div class="header_border"></div>
         </header>
 
         <main>
             <div class="content_main">
-                <div class="content_container"></div>
-                <div class="content_border"></div>
+                <div id="content_container"></div>
+                <div class="content_border_1"></div>
+                <div class="content_border_2"></div>
             </div>
         </main>
 
         <aside>
-
             <nav class="menu">
-
                 <div class="menu_border"></div>
 
                 <div class="button_container">
-                    <button type="button" class="menu_button">Competências</button>
-                    <button type="button" class="menu_button">Projetos</button>
-                    <button type="button" class="menu_button">Formação</button>
-                    <button type="button" class="menu_button">Certificados</button>
-                    <button type="button" class="menu_button">Mais sobre mim</button>
+                    <button class="menu_button" onclick="loadPage('')">Competências</button>
+                    <button class="menu_button" onclick="loadPage('')">Projetos</button>
+                    <button class="menu_button" onclick="loadPage('')">Formação</button>
+                    <button class="menu_button" onclick="loadPage('')">Certificados</button>
+                    <button class="menu_button" onclick="loadPage('')">Mais sobre mim</button>
                 </div>
-            
             </nav>
         </aside>
 

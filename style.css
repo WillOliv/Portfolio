@@ -3,6 +3,7 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root{
@@ -35,13 +36,11 @@ body, a, button{
     
     display: grid;
 
-    grid-template-columns:      35fr 15fr ;
-    grid-template-rows:     05fr
+    grid-template-columns:      70fr 30fr ;
+    grid-template-rows:     7fr
                             40fr
-                            05fr 
-                              
-                         
-;
+                            05fr
+                            ;
 
     grid-template-areas: 
         "   header    header  "
@@ -68,7 +67,7 @@ body, a, button{
 
 /*------------------------------------------------  Layout sketch */
 /*
-header, main, aside, footer, .modes, .navbar, .content_container, a,button, #last_update{   
+header, main, aside, footer, .modes,.menu, .navbar, .content_container, a,button,.button_container, #last_update{   
     border: solid white 1px;
 }
 
@@ -76,19 +75,29 @@ header, main, aside, footer, .modes, .navbar, .content_container, a,button, #las
 
 /*------------------------------------------------  Header */
 header{
+    position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
+}
+
+.header_container{
+    display: flex;
+    align-items: flex-end;
     justify-content: space-between;
+
+    width: 95%;
+    height: 100%;
+    margin: 0 2.5%;
 }
 
 .modes{
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 
     width: 5%;
-    height: 95%;
+    height: 80%;
 }
 
 .modes .mode_button{
@@ -100,23 +109,15 @@ header{
     cursor: pointer;
 }
 
-.modes i{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    width: 100%;
-    height: 100%;
-}
-
 .navbar{
+    position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-evenly;
 
-    width: 25%;
-    height: 95%;
+    width: 20%;
+    height: 80%;
 }
 
 .navbar a{
@@ -137,17 +138,16 @@ main {
 }
 
 main .content_main{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 95%;
-    height: 95%;
-
-    position: relative;
+    width: 90%;
+    height: 90%;
 }
 
-main .content_container{
+main #content_container{
     width: 100%;
     height: 100%;
 }
@@ -160,29 +160,27 @@ aside{
 }
 
 aside .menu{
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     
     height: 70%;
-    width: 70%;
-
-    position: relative;
-
-    margin-left: 10%;
+    width: 90%;
+    
+    margin: 1%;
 }
 
 .menu .button_container{
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
 
-    height: 90%;
+    height: 60%;
     width: 90%;
 
-    margin-left: 5%;
+    margin: 5% 0 0 5%;
 }
 
 .menu .menu_button{
@@ -191,23 +189,25 @@ aside .menu{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
-    font-size: 2rem;
 
-    width: 100%;
-    height: 15%;
+    font-size: 1.75rem;
+
+    width: fit-content;
+    height: 18%;
+
+    padding: 1%;
 
     cursor: pointer;
+    
+    border-bottom:  0.25rem solid var(--purple);
 }
 
 /*------------------------------------------------  Footer */
-
 footer{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    position: relative;
 }
 
 footer #last_update{
@@ -217,62 +217,83 @@ footer #last_update{
 /*------------------------------------------------  Borders */
 .main_border_1{
     position: absolute;
-    width: 50%;
-    height: 50%;
-
-    top: 0;
+    bottom: 0;
     left: 0;
 
-    border-top: 5px solid var(--purple);
-    border-left: 5px solid var(--purple);
-    border-radius: 2rem 0 0 0;
+    border-bottom: 0.25rem solid var(--purple);
+    border-left: 0.25rem solid var(--purple);
+
+    width: 25%;
+    height: 25%;
 }
 
 .main_border_2{
     position: absolute;
-    width: 50%;
-    height: 50%;
-
     bottom: 0;
     right: 0;
 
-    border-bottom: 5px solid var(--purple);
-    border-right: 5px solid var(--purple);
-    border-radius: 0 0 2rem 0;
+    border-bottom: 0.25rem solid var(--purple);
+    border-right: 0.25rem solid var(--purple);
+
+    width: 25%;
+    height: 25%;
 }
 
-.content_border{
+.header_border{
+    position: absolute;
+    bottom: 0;
+
+    border-bottom:  0.25rem solid var(--purple);
+    border-right: 0.25rem solid var(--purple);
+    border-left: 0.25rem solid var(--purple);
+
+    width: 95%;
+    height: 40%;
+}
+
+.content_border_1{
     position: absolute;
     top: 0;
     right: 0;
 
-    width: 50%;
+    width: 30%;
     height: 50%;
 
-    border-right: solid var(--purple) 5px ;
-    border-top:   solid var(--purple) 5px;
+    border-top: 0.25rem solid var(--purple);
+    border-right: 0.25rem solid var(--purple);
+    border-radius: 0 1rem 0 0;
+}
+.content_border_2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
+    width: 30%;
+    height: 50%;
+
+    border-bottom:  0.25rem solid var(--purple);
+    border-left: 0.25rem solid var(--purple);
+    border-radius: 0 0 0 1rem;
 }
 
 .menu_border{
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
 
     width: 50%;
     height: 50%;
 
-    border-bottom: solid var(--purple) 5px;
-    border-left: solid var(--purple) 5px;
-    border-radius: 0 0 0 2rem ;
+    border-top: 0.25rem solid var(--purple);
+    border-left: 0.25rem solid var(--purple);
+    border-radius: 1rem 0 0 0 ;
 }
 
 .footer_border{
     position: absolute;
-    top: 0;
+    
+    width: 60%;
+    height: 100%;
 
-    width: 50%;
-
-    border-top:   solid var(--purple) 5px;
-
+    border-top: 0.25rem solid var(--purple);
 }

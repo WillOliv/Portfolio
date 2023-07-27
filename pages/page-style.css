@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #F5F5F5;
+    --black: #1C1C1C;
+    --purple:#563D7C;
+
+    font-size: 62.5%;
+}
+/* -------------------------------------------------- */
+.page-body{
+
+}
+
+.page-main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    padding : 3%;
+    
+}
+
+.page-main h2{
+    font-size: 2.5rem;
+
+}
+
+.page-main pre{
+    font-size: 1.5rem;
+    white-space: pre-line;
+    text-align: justify;
+}
+
