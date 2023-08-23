@@ -1,3 +1,4 @@
+// Homepage loader
 document.addEventListener("DOMContentLoaded", function() {
   let pageName = document.getElementById("content_container");
 
@@ -9,9 +10,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-/* -------------------------------------------------------------------*/
 
-var day = new Date("2023-07-17");
+// Menu loader
+  function loadPage(url) {
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("content_container").innerHTML = data;
+      });
+}
+
+
+// Last update 
+var day = new Date("2023-08-22");
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -24,22 +35,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     getLastUpdate.textContent = "Atualizado em " + filterDay;
   });
-
-
-
-
-
-
-
-
-  
-  /* -------------------------------------------------------------------
-  function loadPage(url) {
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("content_container").innerHTML = data;
-      });
-}
-*/
-
